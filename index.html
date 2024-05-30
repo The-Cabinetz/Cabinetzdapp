@@ -1,0 +1,267 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>The Cabinetz</title>
+  <link rel="icon" type="image/png" href="/build/images/fav.png" />
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Raleway:wght@600;700&display=swap">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+  <style>
+    html, body {
+      height: 100%;
+      margin: 0;
+      padding: 0;
+      font-family: 'Raleway', sans-serif;
+      font-weight: 600;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    main {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
+    }
+
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      max-width: 800px;
+      padding: 20px;
+      justify-content: center;
+      padding-top: 120px; /* Added padding to top */
+    }
+
+    .left-content {
+      max-width: 500px;
+      margin-bottom: 20px;
+      text-align: center;
+      padding-top: 20px; /* Added padding to top of left content */
+    }
+
+    .right-content {
+      padding-top: 50px;
+      flex-grow: 1; /* Allow the right content to grow */
+      width: 100%; /* Ensure it takes up available space */
+    }
+
+    #logo {
+      max-width: 150%;
+    }
+
+    @media only screen and (min-width: 600px) {
+      .container {
+        flex-direction: row;
+        padding-top: 0; /* Remove extra padding for larger screens */
+      }
+
+      .left-content {
+        margin-right: 60px;
+        text-align: left;
+        flex: 2.5; /* Allow the left content to take available space */
+      }
+
+      .right-content {
+        width: 20%; /* Adjust the width as needed */
+      }
+    }
+
+    .header {
+      overflow: hidden;
+      background-color: #ffdd5c;
+      padding: 10px 20px;
+      width: 100%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      box-sizing: border-box;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      z-index: 1000;
+    }
+
+    .header a {
+      color: #281E37 !important;
+      text-align: center;
+      padding: 12px;
+      text-decoration: none;
+      font-size: 18px;
+      line-height: 25px;
+      border-radius: 4px;
+      font-weight: bold !important; /* Added to make the text bold */
+      margin: 0 10px; /* Added margin to separate the links */
+    }
+
+    .header a.logo {
+      font-size: 25px;
+      font-weight: 700;
+      padding: 0;
+    }
+
+    .header a.logo img {
+      max-height: 100px;
+    }
+
+    .header a:hover {
+      color: #281E37 !important;
+    }
+
+    .header a.active {
+      color: #8b0000 !important;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 5px; /* Smaller gap between icons */
+      flex-direction: row; /* Ensure horizontal layout by default */
+    }
+
+    .social-links a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .social-links img {
+      width: 20px;
+      height: 20px;
+    }
+
+    .hamburger {
+      font-size: 30px;
+      cursor: pointer;
+    }
+
+    @media screen and (max-width: 500px) {
+      .header {
+        flex-direction: column; /* Stack items vertically */
+        align-items: center; /* Center align items in the header */
+      }
+
+      .header a.logo {
+        order: 0; /* Ensure the logo is at the top */
+        margin-bottom: 10px;
+      }
+
+      .hamburger {
+        order: 1; /* Place the hamburger menu below the logo */
+      }
+
+      .header a {
+        display: block;
+        text-align: left;
+      }
+
+      .header-right {
+        flex-direction: column;
+        align-items: center; /* Center align the header links */
+        width: 100%;
+        display: none; /* Hide header links by default */
+      }
+
+      .header-right.show {
+        display: flex; /* Show header links when toggled */
+      }
+
+      .social-links {
+        flex-direction: row; /* Keep icons horizontal */
+      }
+
+      main {
+        padding-top: 180px;
+      }
+    }
+
+    @media screen and (min-width: 501px) {
+      .hamburger {
+        display: none; /* Hide hamburger on larger screens */
+      }
+    }
+
+    h1, h2, h3, h4, h5, h6 {
+      font-weight: 700;
+    }
+  </style>
+
+  <link rel="stylesheet" href="/build/main.css">
+  <script src="/build/main.js"></script>
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const hamburger = document.querySelector('.hamburger');
+      const headerRight = document.querySelector('.header-right');
+
+      hamburger.addEventListener('click', function() {
+        headerRight.classList.toggle('show');
+      });
+    });
+  </script>
+</head>
+<body>
+  <div class="header">
+    <a href="#default" class="logo"><img src="/build/images/logo.png" alt="Logo"></a>
+    <i class="fas fa-bars hamburger"></i> <!-- Hamburger icon -->
+    <div class="header-right">
+      <a class="active" href="https://thecabinetz.com/">Home</a>
+      <a href="https://thecabinetz.com/about">About</a>
+      <a href="https://thecabinetz.com/meet-the-cabinetz">Meet the Cabinetz</a>
+      <a href="https://thecabinetz.com/shop-the-cabinetz">Shop the Cabinetz</a>
+      <a href="https://thecabinetz.com/artwork">Artwork</a>
+      <a href="#nft">NFT</a>
+      <a href="#fashion">Fashion</a>
+      <div class="social-links">
+        <a href="https://www.instagram.com/thecabinetz/" target="_blank">
+          <img src="images/instagram_logo.png" alt="Instagram">
+        </a>
+        <a href="https://youtube.com" target="_blank">
+          <img src="images/youtube_logo.png" alt="YouTube">
+        </a>
+        <a href="https://twitter.com/thecabinetz" target="_blank">
+          <img src="images/twitter_logo.png" alt="Twitter">
+        </a>
+        <a href="https://tiktok.com" target="_blank">
+          <img src="images/tiktok_logo.png" alt="TikTok">
+        </a>
+      </div>
+    </div>
+  </div>
+
+  <main>
+    <div class="container">
+      <div class="left-content">
+        <h2 style="font-family: Raleway; font-weight: 700; font-size: 2.5rem; line-height: 1.2; color: #8b0000">Own a piece of <br>The Cabinetz's story.</h2><br>
+        <p style="font-family: Raleway; font-weight: 500; font-size: 1rem; line-height: 1.5;">Step into the realm of creativity and imagination with "The Cabinetz", an exclusive NFT that grants you ownership of a breathtaking piece of character concept art. This unique and limited-edition digital asset is your gateway to a world where art, technology, and ownership converge.</p><br>
+        <p style="font-family: Raleway; font-weight: 500; font-size: 1rem; line-height: 1.5;">Don't miss your chance to own a piece of the future. Invest in
+          The Cabinetz and become a custodian of creativity, a connoisseur of character, and a pioneer of NFT art ownership.</p>
+        <p style="font-family: Raleway; font-weight: 500; font-size: 1rem; line-height: 1.5;">This is your opportunity to own a slice of the digital art
+            renaissance.</p>
+      </div>
+      <div class="right-content"> 
+        <div id="minting-dapp">
+          <div class="collection-not-ready">
+            <svg class="spinner" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+            </svg>Loading collection data...
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <div id="notifications"></div>
+</body>
+</html>
