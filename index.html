@@ -16,9 +16,6 @@
       padding: 0;
       font-family: 'Raleway', sans-serif;
       font-weight: 600;
-      display: flex;
-      justify-content: center;
-      align-items: center;
     }
 
     main {
@@ -27,6 +24,8 @@
       align-items: center;
       justify-content: center;
       width: 100%;
+      padding-top: 80px; /* Adjust padding to ensure the content is below the header */
+      box-sizing: border-box;
     }
 
     .container {
@@ -36,20 +35,18 @@
       max-width: 800px;
       padding: 20px;
       justify-content: center;
-      padding-top: 120px; /* Added padding to top */
     }
 
     .left-content {
       max-width: 500px;
       margin-bottom: 20px;
       text-align: center;
-      padding-top: 20px; /* Added padding to top of left content */
     }
 
     .right-content {
       padding-top: 50px;
-      flex-grow: 1; /* Allow the right content to grow */
-      width: 100%; /* Ensure it takes up available space */
+      flex-grow: 1;
+      width: 100%;
     }
 
     #logo {
@@ -59,17 +56,16 @@
     @media only screen and (min-width: 600px) {
       .container {
         flex-direction: row;
-        padding-top: 0; /* Remove extra padding for larger screens */
       }
 
       .left-content {
         margin-right: 60px;
         text-align: left;
-        flex: 2.5; /* Allow the left content to take available space */
+        flex: 2.5;
       }
 
       .right-content {
-        width: 20%; /* Adjust the width as needed */
+        width: 20%;
       }
     }
 
@@ -97,8 +93,8 @@
       font-size: 18px;
       line-height: 25px;
       border-radius: 4px;
-      font-weight: bold !important; /* Added to make the text bold */
-      margin: 0 10px; /* Added margin to separate the links */
+      font-weight: bold !important;
+      margin: 0 10px;
     }
 
     .header a.logo {
@@ -126,8 +122,8 @@
 
     .social-links {
       display: flex;
-      gap: 5px; /* Smaller gap between icons */
-      flex-direction: row; /* Ensure horizontal layout by default */
+      gap: 5px;
+      flex-direction: row;
     }
 
     .social-links a {
@@ -148,17 +144,17 @@
 
     @media screen and (max-width: 500px) {
       .header {
-        flex-direction: column; /* Stack items vertically */
-        align-items: center; /* Center align items in the header */
+        flex-direction: column;
+        align-items: center;
       }
 
       .header a.logo {
-        order: 0; /* Ensure the logo is at the top */
+        order: 0;
         margin-bottom: 10px;
       }
 
       .hamburger {
-        order: 1; /* Place the hamburger menu below the logo */
+        order: 1;
       }
 
       .header a {
@@ -168,17 +164,17 @@
 
       .header-right {
         flex-direction: column;
-        align-items: center; /* Center align the header links */
+        align-items: center;
         width: 100%;
-        display: none; /* Hide header links by default */
+        display: none;
       }
 
       .header-right.show {
-        display: flex; /* Show header links when toggled */
+        display: flex;
       }
 
       .social-links {
-        flex-direction: row; /* Keep icons horizontal */
+        flex-direction: row;
       }
 
       main {
@@ -188,7 +184,7 @@
 
     @media screen and (min-width: 501px) {
       .hamburger {
-        display: none; /* Hide hamburger on larger screens */
+        display: none;
       }
     }
 
@@ -213,7 +209,7 @@
 <body>
   <div class="header">
     <a href="#default" class="logo"><img src="/build/images/logo.png" alt="Logo"></a>
-    <i class="fas fa-bars hamburger"></i> <!-- Hamburger icon -->
+    <i class="fas fa-bars hamburger"></i>
     <div class="header-right">
       <a class="active" href="https://thecabinetz.com/">Home</a>
       <a href="https://thecabinetz.com/about">About</a>
