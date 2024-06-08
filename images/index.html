@@ -16,22 +16,16 @@
       padding: 0;
       font-family: 'Raleway', sans-serif;
       font-weight: 600;
-      display: flex;
-      flex-direction: column;
-    }
-
-    body {
-      display: flex;
-      flex-direction: column;
     }
 
     main {
       display: flex;
-      justify-content: center;
+      flex-direction: column;
       align-items: center;
-      padding-top: 100px; /* Adjusted padding to ensure the content is below the header */
+      justify-content: center;
+      width: 100%;
+      padding-top: 80px; /* Adjust padding to ensure the content is below the header */
       box-sizing: border-box;
-      flex-grow: 1;
     }
 
     .container {
@@ -40,7 +34,7 @@
       align-items: center;
       max-width: 800px;
       padding: 20px;
-      box-sizing: border-box;
+      justify-content: center;
     }
 
     .left-content {
@@ -75,48 +69,120 @@
       }
     }
 
-    .header, .footer {
+    .header {
       overflow: hidden;
       background-color: #ffdd5c;
-      padding: 10px 20px; /* Ensuring same padding for header and footer */
+      padding: 10px 100px;
       width: 100%;
       display: flex;
-      justify-content: center;
+      justify-content: space-between;
       align-items: center;
       box-sizing: border-box;
+      position: fixed;
+      top: 0;
       left: 0;
       right: 0;
       z-index: 1000;
     }
 
-    .header {
-      position: fixed;
-      top: 0;
-    }
-
-    .footer {
-      color: #281E37;
+    .header a {
+      color: #281E37 !important;
       text-align: center;
-      font-size: 0.9rem;
-      padding: 20px 20px; /* Ensuring same padding for header and footer */
-      margin-top: 20px;
-      flex-shrink: 0; /* Ensure footer is always at the bottom */
+      padding: 12px;
+      text-decoration: none;
+      font-size: 20px;
+      line-height: 25px;
+      border-radius: 4px;
+      font-weight: bold !important;
+      margin: 0 5px;
     }
 
-    .header .logo img {
+    .header a.logo {
+      font-size: 28px;
+      font-weight: 700;
+      padding: 0;
+    }
+
+    .header a.logo img {
       max-height: 100px;
     }
 
+    .header a:hover {
+      color: #281E37 !important;
+    }
+
+    .header a.active {
+      color: #8b0000 !important;
+    }
+
+    .header-right {
+      display: flex;
+      align-items: center;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 0;
+      flex-direction: row;
+    }
+
+    .social-links a {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .social-links img {
+      width: 20px;
+      height: 20px;
+    }
+
+    .hamburger {
+      font-size: 30px;
+      cursor: pointer;
+      display: none;
+    }
+
     @media screen and (max-width: 850px) {
-      .header, .footer {
+      .header {
         flex-direction: column;
         align-items: center;
         padding-left: 10px;
         padding-right: 10px;
       }
 
+      .header a.logo {
+        order: 0;
+        margin-bottom: 10px;
+      }
+
+      .hamburger {
+        order: 1;
+        display: block;
+      }
+
+      .header a {
+        display: block;
+        text-align: left;
+      }
+
+      .header-right {
+        flex-direction: column;
+        align-items: center;
+        width: 100%;
+        display: none;
+      }
+
+      .header-right.show {
+        display: flex;
+      }
+
+      .social-links {
+        flex-direction: row;
+      }
+
       main {
-        padding-top: 180px; /* Adjust to ensure content is below the header */
+        padding-top: 180px;
       }
     }
 
@@ -149,8 +215,32 @@
   </script>
 </head>
 <body>
-  <div class="header">
-    <a href="https://thecabinetz.com" class="logo"><img src="/build/images/logo.png" alt="Logo"></a>
+  <div class="header" style="padding-top: 0px; padding-bottom: 0px;">
+    <a href="#default" class="logo"><img src="/build/images/logo.png" alt="Logo"></a>
+    <i class="fas fa-bars hamburger"></i>
+    <div class="header-right">
+      <a class="active" href="https://thecabinetz.com/">Home</a>
+      <a href="https://thecabinetz.com/about">About</a>
+      <a href="https://thecabinetz.com/meet-the-cabinetz">Meet the Cabinetz</a>
+      <a href="https://thecabinetz.com/shop-the-cabinetz">Shop the Cabinetz</a>
+      <a href="https://thecabinetz.com/artwork">Artwork</a>
+      <a href="#nft">NFT</a>
+      <a href="#fashion">Fashion</a>
+      <div class="social-links" style="padding-left: 100px;">
+        <a href="https://www.instagram.com/thecabinetz/" target="_blank">
+          <img src="images/instagram_logo.png" alt="Instagram">
+        </a>
+        <a href="https://youtube.com" target="_blank">
+          <img src="images/youtube_logo.png" alt="YouTube">
+        </a>
+        <a href="https://twitter.com/thecabinetz" target="_blank">
+          <img src="images/twitter_logo.png" alt="Twitter">
+        </a>
+        <a href="https://tiktok.com" target="_blank">
+          <img src="images/tiktok_logo.png" alt="TikTok">
+        </a>
+      </div>
+    </div>
   </div>
 
   <main>
@@ -175,12 +265,6 @@
       </div>
     </div>
   </main>
-
-  <div class="footer">
-    © 2023 The CABINETZ, LLC.<br>
-    Dreamed in New York | Born in Miami | Curated in Atlanta | Inspired by Detroit<br>
-    Made with love in the USA
-  </div>
 
   <div id="notifications"></div>
 </body>
