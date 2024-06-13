@@ -18,11 +18,13 @@
       font-weight: 600;
       display: flex;
       flex-direction: column;
+      align-items: center;
     }
 
     body {
       display: flex;
       flex-direction: column;
+      
     }
 
     main {
@@ -32,48 +34,67 @@
       padding-top: 100px; /* Adjusted padding to ensure the content is below the header */
       box-sizing: border-box;
       flex-grow: 1;
-      flex-direction: column; /* Add this to ensure new sections stack vertically */
+      width: 100%;
+      justify-content: center;
     }
 
     .container {
       display: flex;
       flex-direction: column;
       align-items: center;
-      max-width: 800px;
       padding: 20px;
       box-sizing: border-box;
-    }
-
-    .left-content {
-      max-width: 500px;
-      margin-bottom: 20px;
-      text-align: center;
-    }
-
-    .right-content {
-      padding-top: 50px;
-      flex-grow: 1;
+      max-width: 700px; /* Set the max-width to 700px */
       width: 100%;
+      justify-content: center;
     }
 
-    #logo {
-      max-width: 150%;
+    .centered-content {
+      max-width: 100%; /* Ensure it fits within the container */
+      text-align: center;
+      justify-content: center;
     }
 
-    @media only screen and (min-width: 600px) {
-      .container {
-        flex-direction: row;
-      }
+    .intro-section {
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-start;
+      text-align: left;
+      margin-bottom: 20px;
+      width: 100%;
+      justify-content: center;
+    }
 
-      .left-content {
-        margin-right: 60px;
-        text-align: left;
-        flex: 2.5;
-      }
+    .intro-text {
+      flex: 0.33; /* Made narrower */
+      padding-right: 20px;
+      justify-content: center;
+    }
 
-      .right-content {
-        width: 20%;
-      }
+    .minting-dapp {
+      flex: 0.4; /* Made larger */
+      margin-left: 20px;
+    }
+
+    .highlight-container {
+      margin: 20px 0;
+      width: 80%;
+      justify-content: center;
+      
+    }
+
+    .content {
+      text-align: left;
+      width: 100%; /* Ensure content spans the full width within the container */
+      justify-content: center;
+      
+    }
+
+    .text-section {
+      max-width: 900px;
+      justify-content: center;
+      text-align: left;
+
     }
 
     .header, .footer {
@@ -119,6 +140,17 @@
       main {
         padding-top: 180px; /* Adjust to ensure content is below the header */
       }
+
+      .intro-section {
+        flex-direction: column;
+        align-items: center;
+        text-align: center;
+      }
+
+      .intro-text, .minting-dapp {
+        padding: 0;
+        margin: 0;
+      }
     }
 
     @media screen and (min-width: 851px) {
@@ -155,49 +187,92 @@
   </div>
 
   <main>
-    <div class="container">
-      <div class="left-content">
-        <h2 style="font-family: Raleway; font-weight: 700; font-size: 2.5rem; line-height: 1.2; color: #8b0000">Own a piece of <br>The Cabinetz's story.</h2><br>
-        <p style="font-family: Raleway; font-weight: 600; font-size: 1rem; line-height: 1.5;">Step into the realm of creativity and imagination with "The Cabinetz", an exclusive NFT that grants you ownership of a breathtaking piece of character concept art. This unique and limited-edition digital asset is your gateway to a world where art, technology, and ownership converge.</p><br>
-        <p style="font-family: Raleway; font-weight: 600; font-size: 1rem; line-height: 1.5;">Don't miss your chance to own a piece of the future. Invest in
-          The Cabinetz and become a custodian of creativity, a connoisseur of character, and a pioneer of NFT art ownership.</p>
-        <p style="font-family: Raleway; font-weight: 600; font-size: 1rem; line-height: 1.5;">This is your opportunity to own a slice of the digital art
-            renaissance.</p>
-      </div>
-      <div class="right-content"> 
-        <div id="minting-dapp">
-          <div class="collection-not-ready">
-            <svg class="spinner" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
-              <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
-              <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
-            </svg>Loading collection data...
+    <div class="container centered-content">
+      <div class="content">
+        <div class="intro-section">
+          <div class="intro-text">
+            <h2 style="font-family: Raleway; font-weight: 700; font-size: 2.7rem; line-height: 1.2; color: #8b0000">Own a piece of<br>The Cabinetz's story.</h2><br>
+            <p style="font-family: Raleway; font-weight: 500; font-size: 1rem; line-height: 1.8;">Step into the realm of creativity and imagination with "The Cabinetz", an exclusive NFT that grants you ownership of a breathtaking piece of character concept art. This unique and limited-edition digital asset is your gateway to a world where art, technology, and ownership converge.</p><br>
+            <p style="font-family: Raleway; font-weight: 500; font-size: 1rem; line-height: 1.8;">Don't miss your chance to own a piece of the future. Invest in
+              The Cabinetz and become a custodian of creativity, a connoisseur of character, and a pioneer of NFT art ownership.</p>
+            <p style="font-family: Raleway; font-weight: 500; font-size: 1rem; line-height: 1.8;">This is your opportunity to own a slice of the digital art
+                renaissance.</p>
           </div>
+          <div class="minting-dapp">
+            <div id="minting-dapp">
+              <div class="collection-not-ready">
+                <svg class="spinner" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                  <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                  <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>Loading collection data...
+              </div>
+            </div>
+          </div>
+        </div><br>
+
+        <center> <div class="highlight-container">
+          <h4 class="font_4 wixui-rich-text__text" style="font-size:36px;"><span style="font-size:36px;" class="wixui-rich-text__text"><span style="font-family:raleway-semibold,raleway,sans-serif;" class="wixui-rich-text__text"><span style="font-style:normal;" class="wixui-rich-text__text">We're taking "building in public" to a whole new level!</span></span></span></h4>
+          <br>
+          <div class="left text-section">
+           <!-- Ensure you have a proper structure with <ul> and <li> tags -->
+            <div class="container">
+              <div class="column" style="align-items: flex-end;">
+                <ul>
+                  <li>The Artwork</li>
+                  <li>Ownership & Scarcity</li>
+                  <li>Blockchain Security</li>
+                </ul>
+              </div>
+              <div class="column" style="align-items: flex-start;">
+                <ul>
+                  <li>Digital Showcase</li>
+                  <li>Unlocking Possibilities</li>
+                  <li>Embrace the Future of Art Ownership!</li>
+                </ul>
+              </div>
+            </div>
+            
+            <style>
+              .container {
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+              }
+              .column {
+                width: 45%; /* Adjust as needed to fit your layout */
+                display: flex;
+                justify-content: space-between;
+                width: 100%;
+              }
+              ul {
+                list-style-type: disc;
+                padding-left: 20px;
+              }
+              li {
+                margin-bottom: 10px;
+                font-size: 25px;
+                font-family: raleway-semibold, raleway, sans-serif;
+                font-style: normal;
+                font-weight: normal;
+              }
+            </style>
+            
+            
+
+        <div class="text-section">
+          <p style="font-family: Raleway; font-weight: 500; font-size: 1rem; line-height: 1.8;">At the heart of this NFT lies a captivating character concept art that represents the birth of a new narrative. Crafted by a visionary artist, every stroke and detail is a testament to the boundless potential of human creativity. The character in the artwork is brought to life with vivid colors, intricate details, and an aura of mystique that sparks the imagination.</p><br>
+          <p style="font-family: Raleway; font-weight: 500; font-size: 1rem; line-height: 1.8;">By owning this NFT, you become the sole guardian of this unique piece of character concept art in the digital realm. This NFT is more than just a digital collectible; it's a certificate of ownership that is permanently recorded on the blockchain.</p><br>
+          <p style="font-family: Raleway; font-weight: 500; font-size: 1rem; line-height: 1.8;">Rest assured, the ownership of this NFT is secured by blockchain technology, ensuring the authenticity and provenance of the artwork. Your ownership is transparent, immutable, and verifiable, providing you with a sense of security and confidence.</p><br>
+          <p style="font-family: Raleway; font-weight: 500; font-size: 1rem; line-height: 1.8;">This NFT isn't just a digital file stored on a device; it's a gateway to a vibrant online community of art enthusiasts, collectors, and creators. Showcase your ownership in digital galleries and virtual exhibitions, connecting with like-minded individuals who appreciate the value of art in the digital age.</p><br>
+          <p style="font-family: Raleway; font-weight: 500; font-size: 1rem; line-height: 1.8;">Beyond the intrinsic value of owning a piece of character concept art, your NFT opens doors to future possibilities. You can decide to keep it as a cherished digital collectible, trade it with other NFT enthusiasts, or even integrate it into virtual worlds and metaverse experiences, allowing your character concept art to come to life in new and exciting ways.</p><br>
+          <p style="font-family: Raleway; font-weight: 500; font-size: 1rem; line-height: 1.8;">With The Cabinetz NFT you're not just acquiring a piece of character concept art; you're embracing the future of art ownership. Experience the fusion of art and technology, where your ownership is not bound by physical limitations but defined by the limitless possibilities of the digital world.</p>
         </div>
       </div>
     </div>
-
-    <!-- New content to be inserted here -->
-    <div class="container">
-      <div class="left-content">
-        <h1>Own a piece of <span style="color: #B71C1C;">The Cabinetz's story.</span></h1>
-        <p>Step into the realm of creativity and imagination with "The Cabinetz", an exclusive NFT that grants you ownership of a breathtaking piece of character concept art. This unique and limited-edition digital asset is your gateway to a world where art, technology, and ownership converge.</p>
-        <p>Don't miss your chance to own a piece of the future. Invest in The Cabinetz and become a custodian of creativity, a connoisseur of character, and a pioneer of NFT art ownership. This is your opportunity to own a slice of the digital art renaissance.</p>
-        <button>Gain Access</button>
-      </div>
-      <div class="right-content">
-        <img src alt="The Cabinetz NFT Preview" />
-      </div>
-    </div>
-
-    <div class="container">
-      <div class="left-content">
-        <h2>We're taking "building in public" to a whole new level.</h2>
-        <p>This NFT isn't just a digital file stored on a device; it's a gateway to a vibrant online community of art enthusiasts, collectors, and creators. Showcase your ownership in digital galleries and virtual exhibitions, connecting with like-minded individuals who appreciate the value of art in the digital age.</p>
-        <p>Beyond the intrinsic value of owning a piece of character concept art, your NFT opens doors to future possibilities. You can decide to keep it as a cherished digital collectible, trade it with other NFT enthusiasts, or even integrate it into virtual worlds and metaverse experiences, allowing your character concept art to come to life in new and exciting ways.</p>
-        <p>With The Cabinetz NFT you're not just acquiring a piece of character concept art; you're embracing the future of art ownership. Experience the fusion of art and technology, where your ownership is not bound by physical limitations but defined by the limitless possibilities of the digital world.</p>
-      </div>
-    </div>
   </main>
+
+  <br>
+<br>
 
   <div class="footer">
     © 2023 The CABINETZ, LLC.<br>
