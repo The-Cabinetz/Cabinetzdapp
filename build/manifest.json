@@ -1,10 +1,10 @@
 {
-  "build/main.css": "/build/main.css",
-  "build/main.js": "/build/main.js",
-  "build/images/preview1.png": "/build/images/preview1.png",
-  "build/images/preview.png": "/build/images/preview.png",
-  "build/images/fav.png": "/build/images/fav.png",
-  "build/images/logo.png": "/build/images/logo.e62b4f4c.png",
-  "build/images/Forest/logo.png": "/build/images/Forest/logo.png",
-  "build/images/Pixel/logo.png": "/build/images/Pixel/logo.png"
+  "build/main.css": "http://localhost:8080/build/main.css",
+  "build/main.js": "http://localhost:8080/build/main.js",
+  "build/images/preview1.png": "http://localhost:8080/build/images/preview1.png",
+  "build/images/preview.png": "http://localhost:8080/build/images/preview.png",
+  "build/images/fav.png": "http://localhost:8080/build/images/fav.png",
+  "build/images/logo.png": "http://localhost:8080/build/images/logo.e62b4f4c.png",
+  "build/images/Forest/logo.png": "http://localhost:8080/build/images/Forest/logo.png",
+  "build/images/Pixel/logo.png": "http://localhost:8080/build/images/Pixel/logo.png"
 }
